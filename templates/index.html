@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task list</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Today</h1>
+    <p id="summary" class="summary" aria-live="polite"></p>
+
+    <form id="task-form">
+      <label for="task-input" class="sr-only">New task</label>
+      <input id="task-input" type="text" maxlength="120"
+             placeholder="What needs doing?" autocomplete="off" required>
+      <button type="submit">Add task</button>
+    </form>
+
+    <ul id="task-list"></ul>
+    <p id="empty" class="empty" hidden>Nothing here yet. Add your first task above.</p>
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
